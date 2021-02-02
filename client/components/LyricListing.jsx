@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getLyrics } from '../apis/lyric'
 
-const LyricListing = () => {
+const LyricListing = (formData) => {
     const [lyrics, setLyrics] = useState([])
 
 
@@ -21,8 +21,8 @@ useEffect(() => {
  return (
      <>
      {/* Show Artist and Title */}
-        <h2>Artist: Luther Vandross</h2>
-        <h3>Title: Never Too Much</h3>
+        <h2>Artist: {formData.artist}</h2>
+        <h3>Title: {formData.songTitle}</h3>
         <p>{lyrics.lyrics}</p>
      </>
  )

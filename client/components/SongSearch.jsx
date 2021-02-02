@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import LyricListing from './LyricListing'
 
 const SongSearch = (props) => {
   const [message, setMessage] = useState('')
@@ -10,26 +11,12 @@ const SongSearch = (props) => {
 
   const handleChange = (event) => {
 
-    // Note that this setFormData takes a function
-    // Do this whenever you set state based on existing state
     setFormData(currentFormData => {
       return {
         ...currentFormData,
         [event.target.name]: event.target.value
       }
     })
-
-    // if(event.target.name == 'name') {
-    //   setFormData({
-    //     name: event.target.value
-    //   })
-    // }
-
-    // if(event.target.name == 'email') {
-    //   setFormData({
-    //     email: event.target.value
-    //   })
-    // }
   }
 
   const handleSubmit = (event) => {
@@ -46,12 +33,12 @@ const SongSearch = (props) => {
     } else {
       console.log('Data is ready')
       console.log(formData)
-      // props.updateName(formData.name)
-    }
+      }
 
   }
   
   return (
+      <>
     <form onSubmit={handleSubmit}>
       {message && <span className="message">{message}</span>}
       <label>
@@ -73,6 +60,8 @@ const SongSearch = (props) => {
 
       <button>Send</button>
     </form>
+    {LyricListing(formData)}
+    </>
   )
 }
 

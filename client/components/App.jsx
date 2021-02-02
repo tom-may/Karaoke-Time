@@ -14,7 +14,7 @@ const App = () => {
     {/* Include form with Artist and Title inputs */}
 
     {/* button that renders lyrics -- See code from class*/}
-    <LyricListing />
+    
     </>
   )
 }
