@@ -24,7 +24,6 @@ useEffect(() => {
         <h2>Artist: Luther Vandross</h2>
         <h3>Title: Never Too Much</h3>
         <p>{lyrics.lyrics}</p>
-
      </>
  )
 }
