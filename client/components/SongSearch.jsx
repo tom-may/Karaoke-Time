@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import LyricListing from './LyricListing'
+import { getLyrics } from '../apis/lyric'
 
 const SongSearch = (props) => {
   const [message, setMessage] = useState('')
@@ -19,6 +20,18 @@ const SongSearch = (props) => {
     })
   }
 
+  const [lyrics, setLyrics] = useState([])
+
+
+  const fetchLyrics = () => { 
+      getLyrics(formData)
+        .then(
+            fetchedLyrics => {
+            setLyrics(fetchedLyrics.lyrics)
+            console.log(fetchedLyrics)
+        })
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -31,8 +44,7 @@ const SongSearch = (props) => {
         setMessage('You need to fill out the song title')
         console.log('Song data is not ready')
     } else {
-      console.log('Data is ready')
-      console.log(formData)
+     fetchLyrics()
       }
 
   }
@@ -60,7 +72,7 @@ const SongSearch = (props) => {
 
       <button>Send</button>
     </form>
-    {LyricListing(formData)}
+    <LyricListing {...formData} lyrics={lyrics}/>
     </>
   )
 }
