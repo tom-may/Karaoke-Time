@@ -2,12 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { getLyrics } from '../apis/lyric'
 
 const LyricListing = (props) => {
-console.log(props)
-
-// useEffect(() => {
-//     fetchLyrics()
-//   }, [])
-
  return (
      <>
         <h2>{props.artist}</h2>

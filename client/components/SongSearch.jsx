@@ -23,13 +23,14 @@ const SongSearch = (props) => {
   const [lyrics, setLyrics] = useState([])
   const [showLyrics, setShowLyrics] = useState(false)
 
-
-  const fetchLyrics = () => { 
+  const fetchLyrics = () => {
       getLyrics(formData)
-        .then(
-            fetchedLyrics => {
+        .then(fetchedLyrics => {
+            if(fetchedLyrics.lyrics != ""){
             setLyrics(fetchedLyrics.lyrics)
-           
+            } else {
+                setLyrics('Whoopsie! ¯\_(ツ)_/¯  - Must be a bad karaoke song')
+            }
         })
   }
 
