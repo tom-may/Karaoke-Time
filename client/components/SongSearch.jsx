@@ -71,7 +71,9 @@ const SongSearch = (props) => {
 				<br></br>
 				<button onClick={props.changeColour}>See Lyrics</button>
 			</form>
+			<div className="lyric-container">
 			{showLyrics && (<LyricListing {...formData} lyrics={lyrics} />)}
+			</div>
 		</>
 	)
 }

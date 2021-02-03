@@ -22,7 +22,7 @@ const GetColour = (props) => {
    const [colour, setColour] = useState('none')
   return (
     <div className="container" style={{ backgroundImage: `linear-gradient(to bottom right,${colour[0]},${colour[1]},${colour[2]},${colour[3]})`} }>
-      <SongSearch changeColour={changeColour} setColour={setColour} getRandomColour={getRandomColour}/>
+      <SongSearch changeColour={changeColour} />
     </div>
   )
 }
