@@ -69,7 +69,7 @@ const SongSearch = (props) => {
 				</label>
 				<br></br>
 				<br></br>
-				<button onClick={() => { props.setColour(props.getRandomColour()) }}>See Lyrics</button>
+				<button onClick={props.changeColour}>See Lyrics</button>
 			</form>
 			{showLyrics && (<LyricListing {...formData} lyrics={lyrics} />)}
 		</>
