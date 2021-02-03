@@ -27,9 +27,10 @@ const SongSearch = (props) => {
       getLyrics(formData)
         .then(fetchedLyrics => {
             if(fetchedLyrics.lyrics != ""){
+                console.log(fetchedLyrics.lyrics)
             setLyrics(fetchedLyrics.lyrics)
             } else {
-                setLyrics('Whoopsie! ¯\_(ツ)_/¯  - Must be a bad karaoke song')
+                setLyrics('Whoopsie! ¯/_(ツ)_/¯  - Must be a bad karaoke song')
             }
         })
   }

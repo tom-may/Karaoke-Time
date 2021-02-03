@@ -6,7 +6,12 @@ const LyricListing = (props) => {
      <>
         <h2>{props.artist}</h2>
         <h3>{props.songTitle}</h3>
-        <p>{props.lyrics}</p>
+        <pre> 
+            {/* pre tag = pre-format, easiest solution as lyrics are pre
+            formatted nicely.
+            Proper solution would be to use nl2br - newline-break */}
+            <p>{props.lyrics}</p>
+        </pre>
      </>
  )
 }
