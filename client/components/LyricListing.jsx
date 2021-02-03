@@ -10,9 +10,8 @@ console.log(props)
 
  return (
      <>
-     {/* Show Artist and Title */}
-        <h2>Artist: {props.artist}</h2>
-        <h3>Title: {props.songTitle}</h3>
+        <h2>{props.artist}</h2>
+        <h3>{props.songTitle}</h3>
         <p>{props.lyrics}</p>
      </>
  )

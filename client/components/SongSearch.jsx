@@ -21,6 +21,7 @@ const SongSearch = (props) => {
   }
 
   const [lyrics, setLyrics] = useState([])
+  const [showLyrics, setShowLyrics] = useState(false)
 
 
   const fetchLyrics = () => { 
@@ -28,9 +29,10 @@ const SongSearch = (props) => {
         .then(
             fetchedLyrics => {
             setLyrics(fetchedLyrics.lyrics)
-            console.log(fetchedLyrics)
+           
         })
   }
+
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -45,6 +47,7 @@ const SongSearch = (props) => {
         console.log('Song data is not ready')
     } else {
      fetchLyrics()
+     setShowLyrics(!showLyrics)
       }
 
   }
@@ -70,9 +73,9 @@ const SongSearch = (props) => {
       <br></br>
       <br></br>
 
-      <button>Send</button>
+      <button>See Lyrics</button>
     </form>
-    <LyricListing {...formData} lyrics={lyrics}/>
+    {showLyrics && (<LyricListing {...formData} lyrics={lyrics}/>)}
     </>
   )
 }
